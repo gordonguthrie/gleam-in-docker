@@ -12,6 +12,8 @@ Just laid off from Wayfair and looking for work
 
 Erlang, Elixir, LFE, moar gud stuff
 
+@gordonguthrie (Twitter and Github)
+
 
 ---
 
