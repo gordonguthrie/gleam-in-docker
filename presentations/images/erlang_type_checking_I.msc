@@ -1,0 +1,16 @@
+# this diagram created with mscgen
+# http://www.mcternan.me.uk/mscgen/
+
+# to build the diagram run:
+# mscgen -T png -i distributed_type_checking.msc -o distributed_type_checking.png
+
+msc {
+
+  process_1, process2;
+  |||;
+  process_1 => process2 [ label = "spawn a function"];
+  |||;
+  process_1 => process2 [label = "invoke function\nyay, I know the types"];
+  |||;
+
+}

@@ -5,12 +5,17 @@
 # mscgen -T png -i distributed_type_checking.msc -o distributed_type_checking.png
 
 msc {
-  hscale = "2";
 
   java, haskell;
-
-  java    -> java    [ label = "internal functdion call"];
-  java    -> haskell [ label = "http call with json payload\]n (no type checking)", linecolour="red"];
-  haskell -> haskell [ label = "internal functdion call"];
+  |||;
+  java    box java    [label = "types can be asserted at write time"];
+  java    =>  java    [ label = "internal function call"];
+  |||;
+  java    box haskell [label = "types CANNOT be asserted at write time", linecolour="red", textcolour="red"];
+  java    =>  haskell [ label = "http call with json payload\n (no type checking)", linecolour="red", textcolour="red"];
+  |||;
+  haskell box haskell [label = "types can be asserted at write time"];
+  haskell =>  haskell [ label = "internal function call"];
+  |||;
 
 }
