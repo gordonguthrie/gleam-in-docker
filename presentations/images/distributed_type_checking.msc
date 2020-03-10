@@ -1,0 +1,16 @@
+# this diagram created with mscgen
+# http://www.mcternan.me.uk/mscgen/
+
+# to build the diagram run:
+# mscgen -T png -i distributed_type_checking.msc -o distributed_type_checking.png
+
+msc {
+  hscale = "2";
+
+  java, haskell;
+
+  java    -> java    [ label = "internal functdion call"];
+  java    -> haskell [ label = "http call with json payload\]n (no type checking)", linecolour="red"];
+  haskell -> haskell [ label = "internal functdion call"];
+
+}

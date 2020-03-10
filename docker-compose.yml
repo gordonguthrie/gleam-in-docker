@@ -1,0 +1,15 @@
+version: "3.4"
+
+services:
+
+  gleam:
+    build:
+      dockerfile: ./docker/gleam.dockerfile
+      context: ./
+    volumes:
+      - type: bind
+        source: ./
+        target: /gleam
+      - type: bind
+        source: /tmp/.X11-unix
+        target: /tmp/.X11-unix
